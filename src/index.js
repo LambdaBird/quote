@@ -66,26 +66,6 @@ class Quote {
   }
 
   /**
-   * Default placeholder for quote text
-   *
-   * @public
-   * @returns {string}
-   */
-  static get DEFAULT_QUOTE_PLACEHOLDER() {
-    return 'Enter a quote';
-  }
-
-  /**
-   * Default placeholder for quote caption
-   *
-   * @public
-   * @returns {string}
-   */
-  static get DEFAULT_CAPTION_PLACEHOLDER() {
-    return 'Enter a caption';
-  }
-
-  /**
    * Allowed quote alignments
    *
    * @public
@@ -180,8 +160,8 @@ class Quote {
     this.api = api;
     this.readOnly = readOnly;
 
-    this.quotePlaceholder = config.quotePlaceholder || Quote.DEFAULT_QUOTE_PLACEHOLDER;
-    this.captionPlaceholder = config.captionPlaceholder || Quote.DEFAULT_CAPTION_PLACEHOLDER;
+    this.quotePlaceholder = this.api.i18n.t('input');
+    this.captionPlaceholder = this.api.i18n.t('caption');
 
     this.data = {
       text: data.text || '',
